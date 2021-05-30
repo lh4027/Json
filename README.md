@@ -48,28 +48,27 @@ private:
 ```
 ### 单元测试
 > 错误码
-> ```
 > enum {
-    JSON_PARSE_OK = 0,
-    JSON_PARSE_EMPTY_VALUE,      // 一个 JSON 只含有空白
-    JSON_PARSE_INVALID_VALUE,     // 值不是那三种字面值
-    JSON_PARSE_ROOT_NOT_SINGULAR,  // 一个值之后，在空白之后还有其他字符
-    JSON_PARSE_NUMBER_TOO_BIG,        // json数字过大时的错误码
-    JSON_PARSE_INVALID_STRING_ESCAPE, // 不合法字符串错误码
-    JSON_PARSE_MISS_QUOTATION_MARK,
-    JSON_PARSE_INVALID_STRING_CHAR,
+>    JSON_PARSE_OK = 0,
+>    JSON_PARSE_EMPTY_VALUE,      // 一个 JSON 只含有空白
+>    JSON_PARSE_INVALID_VALUE,     // 值不是那三种字面值
+>    JSON_PARSE_ROOT_NOT_SINGULAR,  // 一个值之后，在空白之后还有其他字符
+>    JSON_PARSE_NUMBER_TOO_BIG,        // json数字过大时的错误码
+>    JSON_PARSE_INVALID_STRING_ESCAPE, // 不合法字符串错误码
+>    JSON_PARSE_MISS_QUOTATION_MARK,
+>    JSON_PARSE_INVALID_STRING_CHAR,
+>
+>    JSON_PARSE_INVALID_UNICODE_SURROGATE,  // 编码成 UTF-8。如果只有高代理项而欠缺低代理项，或是低代理项不在合法码点范围
+>    JSON_PARSE_INVALID_UNICODE_HEX, //如果 \u 后不是 4 位十六进位数字
+>
+>    JSON_PARSE_MORE_COMMA,                   // [1,2,]多了逗号的格式错误
+>    JSON_PARSE_MISS_COMMA_OR_SQUARE_BRACKET, // 数组中缺失正确的逗号或者方括号
 
-    JSON_PARSE_INVALID_UNICODE_SURROGATE,  // 编码成 UTF-8。如果只有高代理项而欠缺低代理项，或是低代理项不在合法码点范围
-    JSON_PARSE_INVALID_UNICODE_HEX, //如果 \u 后不是 4 位十六进位数字
+>    JSON_PARSE_MISS_KEY,                      // 对象中缺失键key
+>    JSON_PARSE_MISS_COLON,                    // 对象中缺失冒号
+>    JSON_PARSE_MISS_COMMA_OR_CURLY_BRACKET // 对象中缺失正确的逗号或者大括号
+> };
 
-    JSON_PARSE_MORE_COMMA,                   // [1,2,]多了逗号的格式错误
-    JSON_PARSE_MISS_COMMA_OR_SQUARE_BRACKET, // 数组中缺失正确的逗号或者方括号
-
-    JSON_PARSE_MISS_KEY,                      // 对象中缺失键key
-    JSON_PARSE_MISS_COLON,                    // 对象中缺失冒号
-    JSON_PARSE_MISS_COMMA_OR_CURLY_BRACKET // 对象中缺失正确的逗号或者大括号
-};
-> ```
 
 
 
