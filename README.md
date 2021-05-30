@@ -12,9 +12,16 @@ C++实现的轻量级Json库，实现符合标准的JSON解析器和生成器。
 ## 实现
 ###  内部架构
 
-为降低文件间的编译依赖关系，把接口从从实现中分离，Json类只提供接口，Value类负责实现该接口，Json类通过一个std::unique_ptr实现对Value的访问。 解析一个JSON字符串的一般用法是：
-
-
 ![图片3](https://user-images.githubusercontent.com/66367559/120108253-f08d9d80-c196-11eb-9f34-433fd6ed920f.jpg)
+将接口与实现分离，JsonValue类管理Json值，Parser类实现Json的解析功能，JsonGenerator类实现生成器的功能，三者在Json类中生成实例，Json类调用这三个类的接口，对外提供解析，生成功能。
+’’’
+Json::Json() : v(new JsonValue) ,p(new Parser), g(new JsonGenerator) { }
+
+Json::~Json() { 
+	delete v;
+	delete p;
+	delete g;
+}
+‘‘‘
 
 
