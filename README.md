@@ -14,3 +14,7 @@ C++实现的轻量级Json库，实现符合标准的JSON解析器和生成器。
 
 为降低文件间的编译依赖关系，把接口从从实现中分离，Json类只提供接口，Value类负责实现该接口，Json类通过一个std::unique_ptr实现对Value的访问。 解析一个JSON字符串的一般用法是：
 
+![图片2](https://user-images.githubusercontent.com/66367559/120108192-b2907980-c196-11eb-8bf1-d8180f754b4b.jpg)
+
+
+
